@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belavita</title>
+  <link rel="icon" type="image/png" href="belavita.png">
+
+  <!-- Bootstrap CSS first -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+        crossorigin="anonymous">     
+
+  <!-- Bootstrap Icons (for the cart icon) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Your CSS after Bootstrap -->
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fs-1" href="index.html">Belavita</a>
+
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+
+          <!-- CART with border -->
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <a class="nav-link position-relative border border-2 border-light rounded-pill px-3" href="#">
+              <i class="bi bi-cart3"></i> Cart
+              <span id="cart-count"
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="bg-light bg-gradient text-center py-5">
+    <div class="container py-5 mt-3">
+      <div class="row align-items-center">
+
+        <div class="col-md-6">
+          <img src="belavita.png" class="img-fluid w-75" alt="Belavita perfume">
+        </div>
+
+        <div class="col-md-6 mt-3 p-2">
+          <h1 class="display-3 fw-bold text-dark">Belavita Perfume</h1>
+          <p class="lead text-dark">
+            <strong>Bella Vita perfumes combine captivating fragrances with an elegant feel for everyday wear.</strong>
+          </p>
+          <a href="#products" class="btn btn-dark btn-lg rounded-pill">View Products</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3">About Us</h2>
+      <p class="lead mx-auto" style="max-width: 700px;">
+        Belavita brings you long-lasting perfumes made for everyday wear, at prices everyone can enjoy.
+      </p>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products" class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center fw-bold fs-1 text-dark mb-5">Our Perfumes</h2>
+
+      <div class="row g-4">
+
+        <!-- Product 1 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm text-center">
+            <img src="https://bellavitaorganic.com/cdn/shop/files/Date_woman_100_ml_1.jpg?v=1767772664&width=1000"
+                 class="card-img-top w-100" style="height: 280px; object-fit: contain;" alt="Rose Bloom">
+            <div class="card-body">
+              <h5 class="card-title">Rose Bloom</h5>
+              <p class="fw-bold fs-5">Rs. 865</p>
+              <button class="btn btn-dark rounded-pill w-100" onclick="addToCart('Rose Bloom')">
+                <i class="bi bi-cart-plus"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm text-center">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUUMZmUx0T16JbOs9B3R3qKRSkBRDC-wboVv5P705NLu-cqQH0G9jGcCCw&s=10"
+                 class="card-img-top w-100" style="height: 280px; object-fit: contain;" alt="Ocean Mist">
+            <div class="card-body">
+              <h5 class="card-title">Ocean Mist</h5>
+              <p class="fw-bold fs-5">Rs. 999</p>
+              <button class="btn btn-dark rounded-pill w-100" onclick="addToCart('Ocean Mist')">
+                <i class="bi bi-cart-plus"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm text-center">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkDOBepiJwPf-6ZM8PCxhQsmG_F4_0lmGWZFXKpycH5oh_Q3yyVoskLzU9&s=10"
+                 class="card-img-top w-100" style="height: 280px; object-fit: contain;" alt="Midnight Oud">
+            <div class="card-body">
+              <h5 class="card-title">Midnight Oud</h5>
+              <p class="fw-bold fs-5">Rs. 536</p>
+              <button class="btn btn-dark rounded-pill w-100" onclick="addToCart('Midnight Oud')">
+                <i class="bi bi-cart-plus"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-5">
+    <div class="container" style="max-width: 600px;">
+      <h2 class="text-center fw-bold mb-4">Contact Us</h2>
+      <form>
+        <div class="mb-3">
+          <label class="form-label">Name</label>
+          <input type="text" class="form-control" placeholder="Your name">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" placeholder="you@example.com">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Message</label>
+          <textarea class="form-control" rows="4"></textarea>
+        </div>
+        <button type="submit" class="btn btn-dark rounded-pill w-100">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p class="mb-0">&copy; 2026 Belavita. All rights reserved.</p>
+  </footer>
+
+  <!-- Toast message -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="cartToast" class="toast bg-success text-white" role="alert">
+      <div class="toast-body" id="toastText">Item added to cart!</div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (bundle includes Popper) - only once, at the bottom -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+          crossorigin="anonymous"></script>
+
+  <script>
+    let count = 0;
+    function addToCart(name) {
+      count++;
+      document.getElementById("cart-count").textContent = count;
+      document.getElementById("toastText").textContent = name + " added to cart!";
+      new bootstrap.Toast(document.getElementById("cartToast"), { delay: 2000 }).show();
+    }
+  </script>
+</body>
+</html>
